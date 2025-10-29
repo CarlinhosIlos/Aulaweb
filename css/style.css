@@ -1,0 +1,105 @@
+body {
+  background-image: url('../imagens/cadastro.png');
+  background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(0, 0, 0, 0.9)), url('../imagens/cadastro.png');
+  background-repeat: no-repeat; 
+  background-size: cover; 
+  background-position: center center; 
+  background-attachment: fixed;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+nav ul {
+    font-family: bold 10px, Verdana;
+     display: flex;
+     flex-direction: row;
+     list-style-type: none;
+     align-content: space-between;
+     justify-content: right;
+     padding: 0px;
+     margin: 10px;
+     gap: 20px;
+     border-style: solid;
+     border-color: white;
+     background-color: white;
+     background-position: 10px;
+    border-radius: 10px;
+}
+ul {
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+}
+
+a {
+    color: green;
+    text-decoration: none;
+}
+
+header img {
+    display: flex;
+    justify-content: center;
+    align-items: left;
+    width: 250px;
+    height: 200px;
+    border-radius: 50%;
+    border: 3px solid white;
+}
+   
+header h1 {
+    font-style: italic;
+    background-color: white;
+    font-family: bold 20px,'Segoe UI';
+    border-color: white;
+    border-style: solid;
+    border-radius: 13px;
+    color: green;
+    text-align: left;
+    padding: 0px;
+}
+
+header{
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: row;
+    margin: 0px;
+    padding-top: 0%;
+    gap: 280px;
+    row-gap: 40px;
+}
+
+main h2 {
+     color: green;
+     text-align: center;
+     border-radius: 0%;
+     border-style: solid;
+     border-color: white;
+     background-color: white;
+     margin: 20px;
+     padding: 10px;
+     border-radius: 10px;
+
+}
+main p {
+    font-size: 20px;
+    font-family: bold 5px Impact;
+    color: white;
+    text-align: justify;
+    margin: 20px;
+    padding: 10px;
+    
+}   
+
+footer{
+    color: green;
+    padding: 10px;
+    gap: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+}
+
+footer img {
+    width: 35px;
+    height: 35px;
+}
