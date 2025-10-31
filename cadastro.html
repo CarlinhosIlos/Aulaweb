@@ -3,34 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="cadastro.css">
-    <title>Cadastro</title>
-    <link rel="stylesheet" href="cadastro.css">
+    <title>Abraço AUmigo</title>
+    <link rel="stylesheet" href="css/cadastro.css">
 </head>
 <body>
     <header>
-        <h1>ONG Abraço amigo</h1>
-        <img src="imagens/logo.png">
-        <nav>
-            <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="projetos.html">Projetos</a></li>
-                <li><a href="cadastro.html">Cadastro</a></li>
-                <li><a href="adoção.html">Adoção</a></li>
-            </ul>
-        </nav>
+        
+        <img src="./imagens/Logo2.png"></img>
+        <ul><li><a href="index.html"><h1>Abraço AuMigo</h1></a></li></ul>
+        
     </header>
+        <nav>
+        <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="projetos.html">Projetos</a></li>
+             <li><a href="cadastro.html">Cadastro</a></li>
+             <li><a href="adoção.html">Adoção</a></li>
+        </ul>
+     </nav>
+    
     <main>
         <div class="form-container">
             <h2>Formulário de Cadastro</h2>
             <form action="#" method="post">
                 <div>
-                  <label for="nome">Nome Completo:</label>
+                  <label for="nome">Nome completo:</label>
                   <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required></div>
+
+                   <div>
+                    <label for="genero">Gênero:</label>
+                    <select id="text" name="genero" required>
+                    <option value="">Gênero</option>
+                    <option value="male">Masculino</option>
+                    <option value="female">Feminino</option>
+                    <option value="others">LGBTQIAP+</option>
+                    <option value="none">Prefiro não dizer</option>
+                </select> 
+                </div>
 
                 <div>
                   <label for="date">Data de nasc:</label>
                   <input type="date" id="date" name="nascimento" placeholder="Data de nascimento" required></div>
+
+                  <div>
+                   <label for="cpf">CPF:</label>
+                    <input type="number" id="CPF" name="CPF" placeholder="Digite seu CPF" required> 
+                </div>              
 
                 <div>
                   <label for="cep">CEP:</label>
@@ -52,10 +70,6 @@
                     <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
                 </div>
                 
-                <div>
-                   <label for="cpf">CPF:</label>
-                    <input type="number" id="CPF" name="CPF" placeholder="Digite seu CPF" required> 
-                </div>
                 
                 <div>
                     <label for="telefone">Telefone:</label>
@@ -70,40 +84,56 @@
                 <div>
                    <label for="interesse">Área de Interesse:</label>
                 <select id="interesse" name="interesse" required>
-                    <option value="">Selecione</option>
+                    <option value="">Área de interesse</option>
                     <option value="voluntariado">Voluntariado</option>
                     <option value="doação">Doação</option>
                     <option value="adoção">Adoção</option>
                 </select>  
                 </div>
-               
-                <div>
-                    <label for="genero">Gênero:</label>
-                    <select id="text" name="genero" required>
-                    <option value="">Selecione</option>
-                    <option value="male">Masculino</option>
-                    <option value="female">Feminino</option>
-                    <option value="others">Outros</option>
-                     <option value="none">Prefiro não dizer</option>
-                </select> 
+
+                 <div>
+                   <label for="interesse">Adoção:</label>
+                <select id="interesse" name="interesse" required>
+                    <option value="">Selecione o cão</option>
+                    <option value="voluntariado">Não é adoção</option>
+                    <option value="doação">Rex</option>
+                    <option value="adoção">Luna</option>
+                    <option value="doação">Max</option>
+                    <option value="adoção">Bella</option>
+                    <option value="doação">Toby</option>
+                    <option value="adoção">Princesa</option>
+                </select>  
                 </div>
+               
+               
                
                 <button type="submit">Enviar</button>
             </form>
-        </div>  
+        </div> 
+    </main> 
      <footer>
-        <a>
-            <img src="imagens/instagram.svg">
-            <p>Instagram</p>
-            <img src="imagens/logo-vermelho-do-youtube-logo-de-midia-social_197792-1803.jpg">
-            <p>YouTube</p>
-            <img src="imagens/whatsapp.svg">
-            <p>(11) 91111-1111</p>
-            <img src="imagens/localizacao_53876-25530.jpg">
-            <p>Endereço: Rua da pedra ondulada Nº 365, Perdizes - São Paulo-SP</p>
-
-        </a>
-        <p>&copy;2025 ONG Abraço amigo | Todos os direitos reservados</p>
+        
+        <img src="./imagens/instagram.svg" alt="Instagram">
+        <a href="https://instagram.com" target="_blank">
+        <p>Instagram</p></a>
+        
+        
+        <img src="./imagens/youtube.svg" alt="YouTube">
+        <a href="https://youtube.com" target="_blank">
+        <p>YouTube</p></a>
+        
+       
+        <img src="/imagens/whatsapp.svg" alt="WhatsApp">
+        <a href="https://whatsapp.com" target="_blank"> 
+        <p>(11) 91111-1111</p></a>
+        
+         
+        <img src="./imagens/local.svg" alt="Endereço">
+        <a href="https://www.google.com/maps/place/R.+Caiub%C3%AD,+1413+-+Perdizes,+S%C3%A3o+Paulo+-+SP,+05010-000/@-23.5350414,-46.680128,17z/data=!4m6!3m5!1s0x94ce57faaca311ed:0x5571c512a7b3fa9e!8m2!3d-23.5350414!4d-46.680128!16s%2Fg%2F11csmmdwdz?entry=ttu&g_ep=EgoyMDI1MTAyNi4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+        <p>R. Caiubí, 1413 - Perdizes, São Paulo - SP, 05010-000</p></a> 
+             
     </footer>
+      
+    <h3>&copy;2025 ONG Abraço AuMigo | Todos os direitos reservados<h3>
 </body>
 </html>
