@@ -1,164 +1,484 @@
+/* ===================================================================
+   1. SISTEMA DE DESIGN: VARIÁVEIS CSS CUSTOMIZADAS (Design System)
+   (Tema Verde)
+   =================================================================== */
+
+:root {
+    /* PALETA DE CORES: TONS DE VERDE (PRIMARY) */
+    --color-primary-500: #28A745; /* Verde Principal */
+    --color-primary-700: #19692C; /* Verde Escuro (Hover/Active) */
+    --color-secondary-500: #4682B4; /* Azul Aço (Secundária) */
+    --color-secondary-700: #3A6A92; /* Azul Escuro */
+    --color-neutral-100: #F4F4F4; /* Cinza Claro (Fundo de itens) */
+    --color-neutral-500: #666666; /* Cinza Médio (Texto) */
+    --color-neutral-900: #222222; /* Preto (Títulos) */
+    --color-success: #38C172;    /* Verde Suave (Feedback Positivo) */
+    --color-danger: #DC3545;     /* Vermelho (Alerta) */
+    --color-info: #17A2B8;       /* Azul Claro (Informação) */
+
+    /* TIPOGRAFIA HIERÁRQUICA */
+    --font-size-xxl: 3.5rem; 
+    --font-size-xl: 2.5rem;  
+    --font-size-lg: 1.5rem;  
+    --font-size-md: 1rem;    
+    --font-size-sm: 0.875rem;
+
+    /* SISTEMA DE ESPAÇAMENTO MODULAR */
+    --space-1x: 8px;
+    --space-2x: 16px;
+    --space-3x: 24px;
+    --space-4x: 32px;
+    --space-6x: 48px;
+    --space-8x: 64px;
+
+    /* RADIUS / BORDAS */
+    --border-radius-sm: 4px;
+    --border-radius-md: 8px;
+}
+
+/* Reset básico e tipografia de base */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Regras do BODY (Mantém o background principal) */
 body {
-   
     background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), 
                       url('../imagens/cadastro.png');
-
     background-repeat: no-repeat; 
     background-size: cover; 
     background-position: center center; 
     background-attachment: fixed;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-h1{
-   background-color: white;
-    font-size: 40px;
-    font-family: Verdana, sans-serif; 
-    font-weight: bold;
-    width: fit-content; 
-    display: flex;
-    flex-direction: row;
-    list-style-type: none;
-    justify-content: center;  
-    padding: 10px;
-    margin: 10px auto;
-    margin-top: 80px;
-    gap: 20px;
-    flex-wrap: wrap;
-    border-radius: 10px;
-}
-
-nav ul {
-    background-color: white;
-    font-size: 20px;
-    font-family: Verdana, sans-serif; 
-    font-weight: bold;
-    width: fit-content; 
-    display: flex;
-    flex-direction: row;
-    list-style-type: none;
-    justify-content: center;  
-    padding: 10px;
-    margin: 10px auto;
-    margin-top: 80px;
-    gap: 20px;
-    flex-wrap: wrap;
-    border-radius: 10px;
-}
-
-ul {
-    margin: 0px;
-    padding: 0px;
-    list-style-type: none;
-    flex-wrap: wrap
-}
-
-a {
     
-    color: green;
-    text-decoration: none;
-    flex-wrap: wrap
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--color-neutral-500); 
 }
 
-header img {
-    display: flex;
-    justify-content: center;
-    align-items: left;
-    width: 220px;
-    height: 200px;
-    border-radius: 50%;
-    border: 3px solid white;
-    flex-wrap: wrap
-}
-   
-header h1 {
-    font-style: italic;
-    font-family: bold 20px,'Segoe UI';
-    color: green;
-    text-align: center;
-    padding: 0px;
-    flex-wrap: wrap
+/* Tipografia Hierárquica */
+h1 { font-size: var(--font-size-xxl); color: var(--color-neutral-900); margin-bottom: var(--space-3x); }
+h2 { font-size: var(--font-size-xl); color: var(--color-neutral-900); margin-bottom: var(--space-2x); }
+h3 { font-size: var(--font-size-lg); color: var(--color-neutral-900); margin-bottom: var(--space-1x); }
+p { font-size: var(--font-size-md); margin-bottom: var(--space-2x); }
+a { text-decoration: none; color: var(--color-secondary-500); }
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
 }
 
-header{
+/* ===================================================================
+   2. LAYOUT PRINCIPAL: GRID, FLEXBOX E ESTRUTURA
+   =================================================================== */
+
+/* HEADER */
+header {
     display: flex;
+    /* ALTERADO: Centraliza a imagem e o título na tela */
     justify-content: center;
     align-items: center;
-    flex-direction: row;
-    margin: 0px;
-    padding-top: 0px;
-    gap: 25px;
-    row-gap: 40px;
-    flex-wrap: wrap
+    gap: var(--space-2x); 
+    padding: var(--space-2x); 
+    /* ALTERADO: Removido 'flex-wrap: wrap;' para manter a imagem e o h1 lado a lado */
+    /* flex-wrap: wrap; */
+}
+.main-header { 
+    display: flex;
+    /* Alterado para 'space-between' para separar o logo do nav */
+    justify-content: space-between; 
+    align-items: center;
+    padding: var(--space-2x) var(--space-4x);
+    background-color: var(--color-neutral-100); 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    position: relative;
+    /* Removido o 'gap: var(--space-4x);' para permitir o space-between */
+}
+header img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid var(--color-primary-500); 
+    object-fit: cover;
+    gap: var(--space-3x);
+
+}
+header h1 {
+    font-size: var(--font-size-lg); 
+    font-style: italic;
+    color: var(--color-primary-500); 
+    padding: 0;
+    margin: 0;
+    gap: var(--space-2x);
+}
+.brand-logo { 
+    display: flex;
+    align-items: center;
+    gap: var(--space-2x);
+    /* NOVO: Garante que a imagem e o H1 estejam juntos e alinhados */
+    /* NOVO: Afasta o logo/h1 da borda esquerda (apenas em desktop via media query) */
 }
 
+/* NAVEGAÇÃO */
+.nav-list { 
+    display: flex;
+    list-style: none;
+    gap: var(--space-2x); 
+    margin: 0;
+    padding: 0;
+}
+
+/* MAIN / CONTEÚDO */
+.grid-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-6x);
+    width: 90%;
+    max-width: 1200px;
+    margin: var(--space-6x) auto;
+    /* CORREÇÃO: Removido o padding horizontal que estava impedindo a centralização completa. */
+    padding: 0; 
+}
 main h2 {
-     color: green;
-     text-align: center;
-     border-radius: 0%;
-     border-style: solid;
-     border-color: white;
-     background-color: white;
-     margin: 20px;
-     padding: 10px;
-     border-radius: 10px;
-     flex-wrap: wrap
-
+    color: var(--color-primary-500); 
+    text-align: center;
+    background-color: white;
+    margin: var(--space-2x) auto; 
+    padding: var(--space-1x); 
+    border-radius: var(--border-radius-sm); 
+    width: fit-content; 
+    border: 1px solid white;
 }
+/* Diminuindo o tamanho do texto principal */
 main p {
-    font-size: 20px;
-    font-family: bold 5px Impact;
-    color: white;
+    font-size: var(--font-size-sm); 
+    color: var(--color-neutral-100); 
     text-align: justify;
-    margin: 20px;
-    padding: 0px;
-    flex-wrap: wrap
-    
-}   
+    margin: var(--space-1x) var(--space-2x); 
+    padding: 0;
+} 
 
-footer{
-    margin: 60px;
-    padding: 3px;
-    gap: 3px;  
+/* FOOTER */
+.main-footer {
+    background-color: var(--color-neutral-900);
+    color: var(--color-neutral-100);
+    padding: var(--space-4x);
+    /* Garante que o conteúdo principal do footer seja centralizado */
     display: flex; 
-    flex-direction: row;
-   justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
-
+.footer-contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-4x);
+    margin-bottom: var(--space-3x);
+    /* MANTIDO: Centraliza os ícones/contatos no eixo principal (horizontal) */
+    justify-content: center; 
+    /* Garante que o bloco de contato não fique 100% largo, se possível */
+    max-width: fit-content; 
+}
+.footer-contact div {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1x);
+}
 footer img {
     width: 30px;
     height: 30px;
     display: flex;
-    flex-direction: row;
-    text-align: left;
-    margin: 5px;
-    gap: 0px;
-    padding: 0px;
-    align-content: space-between;   
+    margin: 0;
 }
-
-h3 {
-    font-size: 15px;
-    font-family: Arial, Helvetica, sans-serif;
-    color: white;
-    text-align: left;
-    margin: 15px;
-    padding: 0px;
-    margin-top: 10px;
-    display: flex;
-    flex-direction: initial;
-    row-gap: 10px;
-}
-
-    footer p {
-    font-size: 15px;
-    font-family: Arial, Helvetica, sans-serif;
-    color: rgb(58, 238, 169);
+footer p {
+    font-size: var(--font-size-sm);
+    color: var(--color-success); 
     text-align: center;
-    margin: 5px;
-    padding: 0px;
-    margin-top: 10px;
-    display: flex;
-    flex-direction: row;
-    gap: 5px;
+    margin: 0;
+    padding: 0;
+}
+h3 {
+    font-size: var(--font-size-sm);
+    color: var(--color-neutral-100);
+    text-align: center;
+    /* USADO: margin: auto para centralizar horizontalmente */
+    margin: var(--space-2x) auto var(--space-1x); 
+    display: block;
+}
+
+
+/* ===================================================================
+   3. BREAKPOINTS E NAVEGAÇÃO RESPONSIVA
+   =================================================================== */
+
+/* Breakpoint 1: MÓVEL GRANDE (e.g., 576px) */
+@media (min-width: 576px) {
+    .footer-contact {
+        justify-content: space-between;
     }
+}
+
+/* Breakpoint 2: TABLET PEQUENO (e.g., 768px) */
+@media (min-width: 768px) {
+    /* LAYOUT: 12 Colunas - Tablet */
+    .grid-layout {
+        grid-template-columns: repeat(12, 1fr);
+        /* Adicionado padding para garantir espaçamento interno nas laterais do grid-layout */
+        padding: 0 var(--space-2x); 
+    }
+    
+    /* CORREÇÃO: Centraliza o conteúdo (largura 10 colunas, iniciando na coluna 2) */
+    .grid-col-content {
+        grid-column: 2 / span 10; 
+    }
+    .grid-col-sidebar {
+        grid-column: span 4;
+        display: block;
+    }
+
+    /* NAV BAR DESKTOP (Logo Esquerda, Menu Direita) */
+    .main-header {
+        /* Garante que o logo e o nav fiquem nas pontas */
+        justify-content: space-between; 
+        padding-left: 0; 
+        padding-right: 0; 
+    }
+    
+    /* NOVO: Afastamento do Logo e Título */
+    .brand-logo { 
+        margin-left: var(--space-3x); 
+    }
+
+    /* NAV BAR DESKTOP */
+    .main-nav {
+        display: block;
+    }
+    .nav-list {
+        /* MUDANÇA: Alinha a lista de links para a direita */
+        justify-content: flex-end; 
+        /* NOVO: Afasta o menu da borda direita */
+        padding-right: var(--space-4x);
+    }
+    .menu-toggle {
+        display: none;
+    }
+    
+    /* Dropdown position em Desktop */
+    .has-dropdown {
+        position: relative;
+    }
+    .dropdown-menu {
+        display: none; 
+        position: absolute;
+        top: 100%;
+        /* Ajustado o alinhamento do dropdown para ficar à direita (flex-end) */
+        right: 0;
+        left: auto; 
+        transform: translateX(0); 
+        min-width: 180px;
+        background-color: white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        list-style: none;
+        padding: var(--space-1x) 0;
+        border-radius: var(--border-radius-sm);
+        z-index: 10;
+    }
+    .dropdown-menu a {
+        display: block;
+        padding: var(--space-1x) var(--space-2x);
+        white-space: nowrap;
+        color: var(--color-neutral-500); 
+    }
+    .dropdown-menu a:hover {
+        background-color: var(--color-neutral-100);
+    }
+    /* Mostrar o dropdown no hover/focus em desktop */
+    .has-dropdown:hover .dropdown-menu,
+    .has-dropdown:focus-within .dropdown-menu { 
+        display: block;
+    }
+}
+
+/* Breakpoint 3: TABLET GRANDE (e.g., 992px) */
+@media (min-width: 992px) {
+    /* CORREÇÃO: Mantém o conteúdo centralizado (largura 9 colunas, iniciando na coluna 3) */
+    .grid-col-content {
+        grid-column: 3 / span 9;
+    }
+    .grid-col-sidebar {
+        grid-column: 10 / span 3;
+    }
+}
+
+/* Breakpoint 4: DESKTOP (e.g., 1200px) */
+@media (min-width: 1200px) {
+    h1 { font-size: 4rem; }
+    h2 { font-size: 2rem; }
+}
+
+/* Breakpoint 5: DESKTOP GRANDE (e.g., 1400px) */
+@media (min-width: 1400px) {
+    .grid-layout {
+        max-width: 1400px;
+        /* Adiciona mais padding nas laterais para telas muito grandes */
+        padding: 0 var(--space-6x); 
+    }
+}
+
+
+/* Estilos para Navegação Mobile (Menu Hambúrguer) */
+@media (max-width: 767px) {
+    .main-header {
+        /* MANTIDO: Garante que em mobile o logo e o hambúrguer fiquem nas pontas */
+        justify-content: space-between; 
+        gap: var(--space-2x);
+    }
+    .brand-logo { 
+        margin-left: 0; /* Remove o afastamento de desktop no mobile */
+    }
+    .main-nav {
+        display: none;
+        position: absolute;
+        top: 100%; 
+        left: 0;
+        width: 100%;
+        background-color: white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        z-index: 90; 
+        padding: var(--space-2x) 0;
+    }
+    .main-nav.is-open {
+        display: block;
+    }
+    .nav-list {
+        flex-direction: column; 
+        align-items: center;
+        gap: 0; 
+    }
+    .nav-item {
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid var(--color-neutral-100);
+    }
+    .nav-item:last-child {
+        border-bottom: none;
+    }
+    .nav-link {
+        display: block;
+        padding: var(--space-2x) var(--space-4x);
+        color: var(--color-primary-500); 
+    }
+
+    /* Submenu (Dropdown) em Mobile */
+    .has-dropdown .dropdown-menu {
+        position: static; 
+        background-color: var(--color-neutral-100);
+        width: 100%;
+        padding: 0;
+    }
+    .dropdown-menu {
+        display: none; 
+    }
+    .has-dropdown.dropdown-open .dropdown-menu {
+        display: block;
+    }
+    .dropdown-menu a {
+        padding: var(--space-1x) var(--space-6x);
+    }
+
+    /* Implementação Visual do Menu Hambúrguer */
+    .menu-toggle {
+        display: flex; 
+        flex-direction: column;
+        gap: 4px;
+        width: 32px;
+        height: 32px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+    }
+    .menu-toggle .bar {
+        display: block;
+        width: 100%;
+        height: 3px;
+        background: var(--color-neutral-900);
+        border-radius: 1px;
+    }
+}
+
+
+/* ===================================================================
+   4. COMPONENTES (Cores atualizadas)
+   =================================================================== */
+
+/* Botões */
+.button {
+    display: inline-flex;
+    padding: var(--space-2x) var(--space-3x);
+    border-radius: var(--border-radius-md);
+    font-size: var(--font-size-md);
+    font-weight: bold;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: background-color 0.3s, border-color 0.3s, opacity 0.3s;
+    justify-content: center;
+    align-items: center;
+}
+.button--primary {
+    background-color: var(--color-primary-500); 
+    color: white;
+}
+.button--secondary {
+    background-color: white;
+    color: var(--color-secondary-500);
+    border-color: var(--color-secondary-500);
+}
+/* Estados Visuais do Botão */
+.button:hover {
+    background-color: var(--color-primary-700); 
+    color: white;
+}
+.button--secondary:hover {
+    background-color: var(--color-secondary-500);
+    color: white;
+}
+.button:focus {
+    outline: 2px solid var(--color-secondary-500);
+    outline-offset: 2px;
+}
+.button:active {
+    opacity: 0.8;
+}
+.button:disabled {
+    background-color: var(--color-neutral-500);
+    cursor: not-allowed;
+}
+
+/* Componente Badge */
+.badge {
+    display: inline-block;
+    padding: var(--space-1x) var(--space-2x);
+    border-radius: var(--border-radius-sm);
+    font-size: var(--font-size-sm);
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-right: var(--space-1x);
+}
+.badge--success {
+    background-color: var(--color-success); 
+    color: white;
+}
+
+/* Componente Alert/Feedback */
+.alert {
+    padding: var(--space-3x);
+    border-radius: var(--border-radius-md);
+    margin-bottom: var(--space-4x);
+}
+.alert--info {
+    background-color: #d1ecf1;
+    color: var(--color-info);
+    border: 1px solid #bee5eb;
+}

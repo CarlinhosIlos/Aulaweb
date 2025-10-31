@@ -7,62 +7,96 @@
     <link rel="stylesheet" href="css/cadastro.css">
 </head>
 <body>
-    <header>
-        
-        <img src="./imagens/Logo2.png"></img>
-        <ul><li><a href="index.html"><h1>Abraço AuMigo</h1></a></li></ul>
-        
-    </header>
-        <nav>
-        <ul>
-            <li><a href="index.html">Início</a></li>
-            <li><a href="projetos.html">Projetos</a></li>
-             <li><a href="cadastro.html">Cadastro</a></li>
-             <li><a href="adoção.html">Adoção</a></li>
-        </ul>
-     </nav>
+   <header>
+    <img src="./imagens/Logo2.png" alt="logo">
+    <a href="index.html"><h1>Abraço AuMigo</h1></a>
+</header>
+<nav>
+    <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="projetos.html">Projetos</a></li>
+        <li><a href="cadastro.html">Cadastro</a></li>
+        <li><a href="adoção.html">Adoção</a></li>
+    </ul>
+</nav>
     
     <main>
         <div class="form-container">
             <h2>Formulário de Cadastro</h2>
-            <form action="#" method="post">
+            <form action="#" method="post" onsubmit="alert('Formulário enviado com sucesso!'); return false;">
                 <div>
-                  <label for="nome">Nome completo:</label>
-                  <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required></div>
-
-                   <div>
-                    <label for="genero">Gênero:</label>
-                    <select id="text" name="genero" required>
-                    <option value="">Gênero</option>
-                    <option value="male">Masculino</option>
-                    <option value="female">Feminino</option>
-                    <option value="others">LGBTQIAP+</option>
-                    <option value="none">Prefiro não dizer</option>
-                </select> 
+                    <label for="nome">Nome completo:</label>
+                    <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required minlength="3" maxlength="100">
+                </div>
+                    
+                <div>
+                    <label for="interesse">Área de Interesse:</label>
+                    <select id="interesse" name="interesse" required>
+                        <option value="">Área de interesse</option>
+                        <option value="voluntariado">Voluntariado</option>
+                        <option value="doação">Doação</option>
+                        <option value="adoção">Adoção</option>
+                    </select> 
                 </div>
 
                 <div>
-                  <label for="date">Data de nasc:</label>
-                  <input type="date" id="date" name="nascimento" placeholder="Data de nascimento" required></div>
-
-                  <div>
-                   <label for="cpf">CPF:</label>
-                    <input type="number" id="CPF" name="CPF" placeholder="Digite seu CPF" required> 
-                </div>              
+                    <label for="escolha">Cão para Adoção:</label>
+                    <select id="escolha" name="escolha" required>
+                        <option value="">Selecione o cão</option>
+                        <option value="nãoadoção">Não é adoção</option>
+                        <option value="rex">Rex</option>
+                        <option value="luna">Luna</option>
+                        <option value="max">Max</option>
+                        <option value="bella">Bella</option>
+                        <option value="toby">Toby</option>
+                        <option value="princesa">Princesa</option>
+                    </select> 
+                </div>
 
                 <div>
-                  <label for="cep">CEP:</label>
-                  <input type="text" id="cidade" name="cep" placeholder="Digite seu CEP" required>   
-                </div>  
-               
+                    <label for="genero">Gênero:</label>
+                    <select id="genero" name="genero" required>
+                        <option value="">Selecione o Gênero</option>
+                        <option value="male">Masculino</option>
+                        <option value="female">Feminino</option>
+                        <option value="others">LGBTQIAP+</option>
+                        <option value="none">Prefiro não dizer</option>
+                    </select> 
+                </div>
+
                 <div>
-                   <label for="cidade">Cidade:</label>
-                   <input type="text" id="cidade" name="cidade" placeholder="Digite sua cidade" required> 
+                    <label for="date">Data de nasc:</label>
+                    <input type="date" id="date" name="nascimento" required>
+                </div>
+
+                <div>
+                    <label for="CPF">CPF:</label>
+                    <input type="text" id="CPF" name="CPF" placeholder="000.000.000-00" required pattern="[0-9]{3}\.[0-9]{3}\.[0-9]{3}\-[0-9]{2}" title="Formato: 000.000.000-00" maxlength="14"> 
+                </div> 
+
+                <div>
+                    <label for="telefone">Telefone:</label>
+                    <input type="tel" id="telefone" name="telefone" placeholder="(99) 99999-9999" required pattern="\([0-9]{2}\) [0-9]{4,5}\-[0-9]{4}" title="Formato: (99) 99999-9999" maxlength="15"> 
                 </div>
                 
                 <div>
-                   <label for="estado">Estado:</label>
-                    <input type="text" id="estado" name="estado" placeholder="Digite seu estado" required> 
+                    <label for="endereco">Endereço:</label>
+                    <input type="text" id="endereco" name="endereco" placeholder="Rua, número e bairro" required minlength="5" maxlength="100">
+                </div>
+
+                <div>
+                    <label for="cep">CEP:</label>
+                    <input type="text" id="cep" name="cep" placeholder="00000-000" required pattern="[0-9]{5}\-[0-9]{3}" title="Formato: 00000-000" maxlength="9">  
+                </div> 
+                
+                <div>
+                    <label for="cidade">Cidade:</label>
+                    <input type="text" id="cidade" name="cidade" placeholder="Digite sua cidade" required minlength="2" maxlength="50"> 
+                </div>
+                
+                <div>
+                    <label for="estado">Estado:</label>
+                    <input type="text" id="estado" name="estado" placeholder="Ex: SP" required minlength="2" maxlength="2" pattern="[A-Z]{2}" title="Use a sigla do estado (ex: SP)"> 
                 </div>
                 
                 <div>
@@ -70,70 +104,90 @@
                     <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
                 </div>
                 
-                
-                <div>
-                    <label for="telefone">Telefone:</label>
-                    <input type="tel" id="telefone" name="telefone" placeholder="Digite seu telefone" required> 
-                </div>
-             
-                <div>
-                    <label for="endereco">Endereço:</label>
-                    <input type="text" id="endereco" name="endereco" placeholder="Digite seu endereço" required>
-                </div>
-            
-                <div>
-                   <label for="interesse">Área de Interesse:</label>
-                <select id="interesse" name="interesse" required>
-                    <option value="">Área de interesse</option>
-                    <option value="voluntariado">Voluntariado</option>
-                    <option value="doação">Doação</option>
-                    <option value="adoção">Adoção</option>
-                </select>  
-                </div>
-
-                 <div>
-                   <label for="interesse">Adoção:</label>
-                <select id="interesse" name="interesse" required>
-                    <option value="">Selecione o cão</option>
-                    <option value="voluntariado">Não é adoção</option>
-                    <option value="doação">Rex</option>
-                    <option value="adoção">Luna</option>
-                    <option value="doação">Max</option>
-                    <option value="adoção">Bella</option>
-                    <option value="doação">Toby</option>
-                    <option value="adoção">Princesa</option>
-                </select>  
-                </div>
-               
-               
-               
                 <button type="submit">Enviar</button>
             </form>
         </div> 
     </main> 
-     <footer>
-        
+
+    <footer>
         <img src="./imagens/instagram.svg" alt="Instagram">
-        <a href="https://instagram.com" target="_blank">
-        <p>Instagram</p></a>
-        
+        <a href="https://instagram.com" target="_blank"><p>Instagram</p></a>
         
         <img src="./imagens/youtube.svg" alt="YouTube">
-        <a href="https://youtube.com" target="_blank">
-        <p>YouTube</p></a>
+        <a href="https://youtube.com" target="_blank"><p>YouTube</p></a>
         
-       
         <img src="/imagens/whatsapp.svg" alt="WhatsApp">
-        <a href="https://whatsapp.com" target="_blank"> 
-        <p>(11) 91111-1111</p></a>
+        <a href="https://whatsapp.com" target="_blank"><p>(11) 91111-1111</p></a>
         
-         
         <img src="./imagens/local.svg" alt="Endereço">
-        <a href="https://www.google.com/maps/place/R.+Caiub%C3%AD,+1413+-+Perdizes,+S%C3%A3o+Paulo+-+SP,+05010-000/@-23.5350414,-46.680128,17z/data=!4m6!3m5!1s0x94ce57faaca311ed:0x5571c512a7b3fa9e!8m2!3d-23.5350414!4d-46.680128!16s%2Fg%2F11csmmdwdz?entry=ttu&g_ep=EgoyMDI1MTAyNi4wIKXMDSoASAFQAw%3D%3D" target="_blank">
-        <p>R. Caiubí, 1413 - Perdizes, São Paulo - SP, 05010-000</p></a> 
-             
+        <a href="https://www.google.com/maps/place/R.+Caiub%C3%AD,+1413+-+Perdizes,+S%C3%A3o+Paulo+-+SP,+05010-000/@-23.5350414,-46.680128,17z/data=!4m6!3m5!1s0x94ce57faaca311ed:0x5571c512a7b3fa9e!8m2!3d-23.5350414!4d-46.680128!16s%2Fg%2F11csmmdwdz?entry=ttu&g_ep=EgoyMDI1MTAyNi4wIKXMDSoASAFQAw%3D%3D" target="_blank"><p>R. Caiubí, 1413 - Perdizes, São Paulo - SP, 05010-000</p></a> 
     </footer>
-      
-    <h3>&copy;2025 ONG Abraço AuMigo | Todos os direitos reservados<h3>
+    
+    <h3>©2025 ONG Abraço AuMigo | Todos os direitos reservados</h3>
+
+    <script>
+        
+        function mascara(i, t){
+            var v = i.value;
+            
+           
+            v = v.replace(/\D/g,"");
+
+            if(t.replace(/\D/g,"").length > v.length){
+                v = v.slice(0, t.replace(/\D/g,"").length); 
+            }
+
+            var saida = '';
+            var j = 0;
+            for(var k = 0; k < t.length; k++){
+                if(t.charAt(k) === '#'){
+                    if(v.charAt(j) !== ''){
+                        saida += v.charAt(j);
+                        j++;
+                    } else {
+                        break; 
+                    }
+                } else {
+                    saida += t.charAt(k);
+                }
+            }
+            i.value = saida;
+        }
+
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            const cpfInput = document.getElementById('CPF');
+            const telefoneInput = document.getElementById('telefone');
+            const cepInput = document.getElementById('cep');
+
+           
+            if (cpfInput) {
+                 cpfInput.addEventListener('keyup', () => {
+                    mascara(cpfInput, '###.###.###-##');
+                });
+            }
+
+         
+            if (cepInput) {
+                cepInput.addEventListener('keyup', () => {
+                    mascara(cepInput, '#####-###');
+                });
+            }
+
+        
+            if (telefoneInput) {
+                telefoneInput.addEventListener('keyup', () => {
+                    let value = telefoneInput.value.replace(/\D/g, "");
+                    
+                    
+                    if (value.length > 10) {
+                        mascara(telefoneInput, '(##) #####-####'); 
+                    } else {
+                        mascara(telefoneInput, '(##) ####-####'); 
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 </html>

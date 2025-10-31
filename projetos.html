@@ -3,80 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projetos</title>
-    <link rel="stylesheet" href="css/projetos.css">
+    <title>Projetos | Abraço AuMigo</title>
+    <link rel="stylesheet" href="css/projetos.css"> 
 </head>
 <body>
-    <header>  
-        <img src="./imagens/Logo2.png"></img>
-        <ul><li><a href="index.html"><h1>Abraço AuMigo</h1></a></li></ul>     
-    </header>
-    <nav>
-            <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="projetos.html">Projetos</a></li>
-                <li><a href="cadastro.html">Cadastro</a></li>
-                <li><a href="adoção.html">Adoção</a></li>
+    <header class="main-header">
+        
+        <div class="brand-logo">
+             <a href="index.html" title="Voltar à Página Inicial">
+                <img src="./imagens/Logo2.png" alt="Logo da ONG Abraço AuMigo: um cão e uma mão se abraçando">
+                <h1>Abraço AuMigo</h1>
+             </a>
+        </div>
+        
+        <button class="menu-toggle" aria-controls="main-navigation" aria-expanded="false">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+
+        <nav class="main-nav" id="main-navigation">
+            <ul class="nav-list">
+                <li class="nav-item"><a href="#home" class="nav-link">Início</a></li> 
+                <li class="nav-item"><a href="#projetos" class="nav-link">Projetos</a></li>
+                <li class="nav-item"><a href="#cadastro" class="nav-link">Cadastro</a></li>
+                <li class="nav-item"><a href="#adocao" class="nav-link">Adoção</a></li>
             </ul>
         </nav>
-        <main>
-
-            <section>
-             <h2>Nossos projetos</h2>  
-             <p>Nossa ONG desempenha um papel vital na sociedade, transformando a vida de cães carentes e abandonados através de diversos projetos sociais.
-                Para manter a saúde e bem-estar dos cães, são essenciais os projetos de cuidados veterinários, que incluem: 
-                Tratamento de doenças e lesões (muitas vezes graves devido ao abandono).
-                Vacinação, vermifugação e castração em massa para controle populacional e prevenção de doenças.</p>
-             <p>
-                A doação é o motor de tudo, sendo crucial para a manutenção das atividades: 
-                Doação de alimentos (ração e sachês) para garantir a nutrição diária.
-                Doação de utensílios (caminhas, cobertores, brinquedos, guias e potes).
-                Doação em dinheiro para custear as despesas fixas (aluguel de abrigo, medicamentos, cirurgias e transporte).</p>
-
-                <p>
-                Nossa ONG também investe em projetos de bem-estar e comportamento, oferecendo:
-                Adestramento e socialização, facilitando a adaptação dos cães em seus novos lares.
-                Programas de lar temporário (LT), onde voluntários acolhem os animais em casa até a adoção, ajudando na recuperação física e emocional.</p>
-
-                <p>O trabalho se estende à conscientização da sociedade sobre a guarda responsável e a importância do combate aos maus-tratos.
-                Apoiar nossa ONG, seja com tempo (voluntariado), recursos (doação) ou apadrinhamento de um cão é participar ativamente na missão de dar dignidade e uma segunda chance a esses amigos de quatro patas.</p> 
-        </section>    
-           
-
-       <div class="services-list">
-    <div class="service-card">
-        <img src="imagens/adestramento.png" alt="Adestramento">
-        <h2>Adestramento</h2>
-    </div>
-
-    <div class="service-card">
-        <img src="imagens/adoçao.png" alt="Adoção">
-        <h2>Adoção</h2>
-    </div>
-
-    <div class="service-card">
-        <img src="imagens/tratamento.png" alt="Tratamento">
-        <h2>Tratamento</h2>
-    </div>
+    </header>
     
-    <div class="service-card">
-        <img src="imagens/raçao.png" alt="Alimentos">
-        <h2>Rações</h2>
-    </div>
-
-    <div class="service-card">
-        <img src="imagens/camas.png" alt="Sala de descanso">
-        <h2>Sala de descanso</h2>
-    </div>
+    <main id="app-container">
+        </main>
     
-    <div class="service-card">
-        <img src="imagens/utensilios.png" alt="Brinquedos">
-        <h2>Brinquedos</h2>
-    </div>
-</div>
-    
-    </main>
- 
     <footer>
         
         <img src="./imagens/instagram.svg" alt="Instagram">
@@ -88,17 +46,18 @@
         <a href="https://youtube.com" target="_blank">
         <p>YouTube</p></a>
         
-       
-        <img src="/imagens/whatsapp.svg" alt="WhatsApp">
+        
+        <img src="./imagens/whatsapp.svg" alt="WhatsApp">
         <a href="https://whatsapp.com" target="_blank"> 
         <p>(11) 91111-1111</p></a>
         
-         
+            
         <img src="./imagens/local.svg" alt="Endereço">
         <a href="https://www.google.com/maps/place/R.+Caiub%C3%AD,+1413+-+Perdizes,+S%C3%A3o+Paulo+-+SP,+05010-000/@-23.5350414,-46.680128,17z/data=!4m6!3m5!1s0x94ce57faaca311ed:0x5571c512a7b3fa9e!8m2!3d-23.5350414!4d-46.680128!16s%2Fg%2F11csmmdwdz?entry=ttu&g_ep=EgoyMDI1MTAyNi4wIKXMDSoASAFQAw%3D%3D" target="_blank">
         <p>R. Caiubí, 1413 - Perdizes, São Paulo - SP, 05010-000</p></a> 
              
     </footer>
-     <h3>&copy;2025 ONG Abraço amigo | Todos os direitos reservados<h3>
-</body>
+      <h3>©2025 ONG Abraço amigo | Todos os direitos reservados</h3>
+      
+      </body>
 </html>

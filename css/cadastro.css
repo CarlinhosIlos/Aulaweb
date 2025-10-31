@@ -1,193 +1,185 @@
-body {
-   
-    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), 
-                      url('../imagens/cadastro.png');
+:root {
+    /* PALETA DE CORES: TONS DE VERDE (PRIMARY) */
+    --color-primary-500: #28A745; 
+    --color-primary-700: #19692C; 
+    --color-secondary-500: #4682B4; 
+    --color-secondary-700: #3A6A92; 
+    --color-neutral-100: #F4F4F4; 
+    --color-neutral-500: #666666; 
+    --color-neutral-900: #222222; 
+    --color-success: #38C172;
+    --color-danger: #DC3545;
+    --color-info: #17A2B8;
 
+    /* TIPOGRAFIA HIERÁRQUICA */
+    --font-size-xxl: 3.5rem; 
+    --font-size-xl: 2.5rem;
+    --font-size-lg: 1.5rem; 
+    --font-size-md: 1rem; 
+    --font-size-sm: 0.875rem;
+
+    /* SISTEMA DE ESPAÇAMENTO MODULAR */
+    --space-1x: 8px;
+    --space-2x: 16px;
+    --space-3x: 24px;
+    --space-4x: 32px;
+    --space-6x: 48px;
+    --space-8x: 64px;
+
+    /* RADIUS / BORDAS */
+    --border-radius-sm: 4px;
+    --border-radius-md: 8px;
+}
+
+/* Reset básico e tipografia de base */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Regras do BODY (Mantém o background principal e layout flex) */
+body {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), 
+         url('../imagens/cadastro.png');
     background-repeat: no-repeat; 
     background-size: cover; 
     background-position: center center; 
     background-attachment: fixed;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-h1{
-   background-color: white;
-    font-size: 40px;
-    font-family: Verdana, sans-serif; 
-    font-weight: bold;
-    width: fit-content; 
-    display: flex;
-    flex-direction: row;
-    list-style-type: none;
-    justify-content: center;  
-    padding: 10px;
-    margin: 10px auto;
-    margin-top: 80px;
-    gap: 20px;
-    flex-wrap: wrap;
-    border-radius: 10px;
-}
-nav ul {
-    background-color: white;
-    font-size: 20px;
-    font-family: Verdana, sans-serif; 
-    font-weight: bold;
-    width: fit-content; 
-    display: flex;
-    flex-direction: row;
-    list-style-type: none;
-    justify-content: center;  
-    padding: 10px;
-    margin: 10px auto;
-    margin-top: 80px;
-    gap: 20px;
-    flex-wrap: wrap;
-    border-radius: 10px;
-}
-
-ul {
-    margin: 0px;
-    padding: 0px;
-    list-style-type: none;
-    flex-wrap: wrap
-}
-
-a {
     
-    color: green;
-    text-decoration: none;
-    flex-wrap: wrap
-}
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--color-neutral-500); 
 
-header img {
+    /* Flexbox para garantir que o footer vá para o final da página */
+    min-height: 100vh;
     display: flex;
-    justify-content: center;
-    align-items: left;
-    width: 220px;
-    height: 200px;
-    border-radius: 50%;
-    border: 3px solid white;
-    flex-wrap: wrap
-}
-   
-header h1 {
-    font-style: italic;
-    font-family: bold 20px,'Segoe UI';
-    color: green;
-    text-align: center;
-    padding: 0px;
-    flex-wrap: wrap
+    flex-direction: column;
 }
 
-header{
+/* Tipografia Hierárquica */
+h1 { font-size: var(--font-size-xxl); color: var(--color-neutral-900); margin-bottom: var(--space-3x); }
+h2 { font-size: var(--font-size-xl); color: var(--color-neutral-900); margin-bottom: var(--space-2x); }
+h3 { font-size: var(--font-size-lg); color: var(--color-neutral-900); margin-bottom: var(--space-1x); }
+p { font-size: var(--font-size-md); margin-bottom: var(--space-2x); }
+a { text-decoration: none; color: var(--color-secondary-500); }
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+/* ===================================================================
+   2. HEADER E NAVEGAÇÃO (Ajustado para a estrutura do cadastro.html)
+   =================================================================== */
+
+/* HEADER (Estilo do cadastro.html) */
+header {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: row;
-    margin: 0px;
-    padding-top: 0px;
-    gap: 25px;
-    row-gap: 40px;
-    flex-wrap: wrap
+    gap: var(--space-2x); 
+    padding: var(--space-2x); 
+    flex-wrap: wrap; /* Permite quebrar em telas menores */
+}
+header img {
+    width: 120px; 
+    height: 120px;
+    border-radius: 50%;
+    border: 3px solid white;
+    object-fit: cover;
+}
+header h1 {
+    font-size: 30px; 
+    font-style: italic;
+    color: var(--color-primary-500); 
+    padding: 0;
+    margin: 0;
+    width: fit-content;
 }
 
-main h2 {
-     color: green;
-     text-align: center;
-    font-family: bold 30px 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-     margin: 20px;
-     padding: 10px;
-     border-radius: 10px;
-     flex-wrap: wrap
-
-}
-main form {
-    font-size: 20px;
-    font-family: bold 5px Impact;
-    color: white;
-    text-align: justify;
-    margin: 20px;
-    padding: 0px;
-    flex-wrap: wrap
-    
-}   
-
-footer{
-    margin-top: auto;
-    margin: 40px;
-    padding: 3px;
-    gap: 3px;  
-    display: flex; 
-    flex-direction: row;
-   justify-content: center;
-}
-
-footer img {
-    width: 30px;
-    height: 30px;
+/* NAV (Estilo do cadastro.html) */
+nav ul {
+    background-color: white;
+    font-size: var(--font-size-md);
+    font-weight: bold;
+    width: fit-content; 
     display: flex;
     flex-direction: row;
-    text-align: left;
-    margin: 5px;
-    gap: 0px;
-    padding: 0px;
-    align-content: space-between;   
+    justify-content: center; 
+    padding: var(--space-1x) var(--space-2x);
+    margin: var(--space-1x) auto var(--space-4x) auto; 
+    gap: var(--space-2x);
+    border-radius: var(--border-radius-md);
+}
+nav ul a {
+    color: var(--color-primary-500);
+}
+nav ul a:hover {
+    color: var(--color-primary-700);
 }
 
-h3 {
-    font-size: 15px;
-    font-family: Arial, Helvetica, sans-serif;
-    color: white;
-    text-align: left;
-    margin: 15px;
-    padding: 0px;
-    margin-top: 10px;
-    display: flex;
-    flex-direction: initial;
-    row-gap: 10px;
+
+/* ===================================================================
+   3. MAIN E FORMULÁRIO (ÁREA DE MAIOR CORREÇÃO)
+   =================================================================== */
+main {
+    /* Garante que o main ocupe o espaço restante no layout body flex */
+    flex-grow: 1;
+    /* ADICIONADO: Permite que o conteúdo do main (o formulário) seja rolável se ultrapassar a altura da tela */
+    overflow-y: auto; 
+    padding: var(--space-3x) 0;
 }
 
-    footer p {
-    font-size: 15px;
-    font-family: Arial, Helvetica, sans-serif;
-    color: rgb(58, 238, 169);
+/* Título do formulário */
+.form-container h2 {
+    color: var(--color-primary-500); 
     text-align: center;
-    margin: 5px;
-    padding: 0px;
-    margin-top: 10px;
-    display: flex;
-    flex-direction: row;
-    gap: 5px;
-    }
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--space-3x);
+    padding: 0;
+}
 
+/* Contêiner Principal do Formulário */
 .form-container {
     background-color: white;
-    margin: 50px auto 0 auto;
+    width: 90%; 
+    max-width: 600px; 
+    /* ALTERADO: Adicionado margem superior e inferior para evitar que o form toque a nav/footer em telas pequenas */
+    margin: var(--space-3x) auto; 
     display: flex;
     flex-direction: column;
-    align-items: center; 
-    width: 400px; 
-    padding: 20px;
-    height: auto;
+    padding: var(--space-3x) var(--space-4x) var(--space-6x) var(--space-4x); 
+    border-radius: var(--border-radius-md);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    
+    /* OPCIONAL: Se o problema persistir em telas muito pequenas, use: */
+    /* max-height: 80vh; */
+    /* overflow-y: auto; */
 }
 
 .form-container form {
     width: 100%; 
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: stretch; 
 }
 
 .form-container form div {
-    width: 350px; 
-    margin: 10px auto; 
+    /* ESSENCIAL: Garante que cada campo DIV ocupe seu próprio espaço vertical e use 100% da largura */
+    display: block; 
+    width: 100%; 
+    margin-bottom: var(--space-2x); 
+    box-sizing: border-box;
 }
 
 .form-container form div label {
     display: block; 
     text-align: left; 
-    margin-bottom: 5px;
+    margin-bottom: var(--space-1x);
     font-weight: bold; 
+    color: var(--color-neutral-900);
+    font-size: var(--font-size-md);
 }
 
 .form-container form div input[type="text"],
@@ -201,12 +193,118 @@ h3 {
     display: block; 
     padding: 8px;
     box-sizing: border-box;
-}
+    border: 1px solid #ffffff;
+    border-radius: var(--border-radius-sm);
+    font-size: var(--font-size-md);
+} /* <--- CHAVE DE FECHAMENTO ADICIONADA AQUI! */
 
 .form-container form button {
-    width: 350px; 
-    padding: 10px;
-    margin-top: 15px;
-    background-color: green;
+    width: 100%;
+    padding: 12px; 
+    margin-top: var(--space-3x);
+    background-color: var(--color-primary-500);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius-md);
+    cursor: pointer;
+    font-size: var(--font-size-lg);
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.form-container form button:hover {
+    background-color: var(--color-primary-700);
+}
+
+
+/* ===================================================================
+   4. FOOTER E COPYRIGHT (Ajustado para a estrutura do cadastro.html)
+   =================================================================== */
+
+/* O footer do seu HTML de cadastro é plano, sem classes como .main-footer. Usamos a tag 'footer' */
+footer {
+    display: flex; 
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: var(--space-2x) var(--space-4x);
+    margin-top: var(--space-4x); 
+    gap: var(--space-2x); 
+}
+
+footer img {
+    width: 20px; 
+    height: 20px;
+}
+
+footer a {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+}
+
+footer p {
+    font-size: var(--font-size-sm);
+    /* Usando a variável de sucesso para a cor do link/texto */
+    color: var(--color-success); 
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo para a linha de copyright (que está em um <h3> fora do footer) */
+h3 {
+    font-size: var(--font-size-sm);
+    color: white;
+    text-align: center;
+    width: 100%;
+    padding: var(--space-1x) 0;
+    margin: 0;
+    display: block;
+}
+
+/* ===================================================================
+   5. COMPONENTES E MEDIA QUERIES (Mantidos)
+   =================================================================== */
+
+/* Os estilos de grid, navegação mobile e componentes (button, badge, alert)
+   não são estritamente necessários para o 'cadastro.html', mas são mantidos
+   abaixo caso você os use em outros lugares ou queira um arquivo global. */
+
+/* Breakpoint 1: MÓVEL GRANDE (e.g., 576px) */
+@media (min-width: 576px) {
+    .footer-contact {
+        justify-content: space-between;
+    }
+}
+
+/* ... (restante dos media queries e componentes) ... */
+/* NOTE: O código a seguir é genérico, remova se for usar APENAS para cadastro.css. 
+   Caso contrário, mantenha para outros layouts. */
+
+/* Breakpoint 2: TABLET PEQUENO (e.g., 768px) */
+@media (min-width: 768px) {
+    /* (Seções de grid-layout e nav-desktop aqui) */
+}
+
+/* ... (demais media queries) ... */
+
+
+/* Componentes (Botões, Badges, Alertas) */
+.button {
+    display: inline-flex;
+    padding: var(--space-2x) var(--space-3x);
+    border-radius: var(--border-radius-md);
+    font-size: var(--font-size-md);
+    font-weight: bold;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: background-color 0.3s, border-color 0.3s, opacity 0.3s;
+    justify-content: center;
+    align-items: center;
+}
+.button--primary {
+    background-color: var(--color-primary-500); 
     color: white;
 }
